@@ -23,7 +23,8 @@ services:
       TZ: "$TZ"
     restart: always
     networks:
-      - default
+      net-default:
+        ipv4_address: 10.0.0.10
 
   php:
     build:
@@ -71,7 +72,7 @@ services:
 #    cap_add:
 #      - SYS_PTRACE
 #    networks:
-#      - default
+#      - net-default
 
 #  php54:
 #    build:
@@ -286,4 +287,9 @@ services:
 
 
 networks:
-  default:
+  net-default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 10.0.0.0/24
