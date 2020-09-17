@@ -3,8 +3,8 @@ DNMP（Docker + Nginx + MySQL + PHP7/5 + Redis）是一款全功能的**LNMP一�
 > 使用前最好提前阅读一遍[目录](#目录)，以便快速上手，遇到问题也能及时排除。
 
 **[[ENGLISH]](README-en.md)** -
-[**[GitHub地址]**](https://github.com/FineYi/dnmp) -
-[**[Gitee地址]**](https://github.com/FineYi/dnmp)
+[**[GitHub地址]**](https://github.com/fineyi/dnmp) -
+[**[Gitee地址]**](https://gitee.com/fineyi/dnmp)
 
 DNMP项目特点：
 1. `100%`开源
