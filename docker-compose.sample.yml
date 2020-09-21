@@ -24,7 +24,7 @@ services:
     restart: always
     networks:
       net-default:
-        ipv4_address: 10.0.0.10
+        ipv4_address: ${NGINX_CONTAINER_IP}
 
   # php:
   #   build:
