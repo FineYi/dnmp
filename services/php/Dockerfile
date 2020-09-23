@@ -16,7 +16,7 @@ RUN chmod +x install.sh \
     && rm -rf /tmp/extensions
 
 
-RUN apk --no-cache add tzdata \
+RUN apk --no-cache add tzdata --repository http://${CONTAINER_PACKAGE_URL}/alpine/edge/community/ --allow-untrusted \
     && cp "/usr/share/zoneinfo/$TZ" /etc/localtime \
     && echo "$TZ" > /etc/timezone
 
@@ -33,7 +33,7 @@ ENV COMPOSER_HOME=/tmp/composer
 
 
 # php image's www-data user uid & gid are 82, change them to 1000 (primary user)
-RUN apk add shadow --no-cache --repository http://mirrors.aliyun.com/alpine/edge/community/ --allow-untrusted && usermod -u 1000 www-data && groupmod -g 1000 www-data
+RUN apk add shadow --no-cache --repository http://${CONTAINER_PACKAGE_URL}/alpine/edge/community/ --allow-untrusted && usermod -u 1000 www-data && groupmod -g 1000 www-data
 
 
 WORKDIR /www
